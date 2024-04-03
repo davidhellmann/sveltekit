@@ -6,12 +6,8 @@
 </script>
 
 {#if $Entries.fetching}
-  loading...
-{:else}
-  loading done!
-{/if}
-
-{#if $Entries?.data?.entries && $Entries?.data?.entries?.length > 0}
+  <p>Loading...</p>
+{:else if $Entries?.data?.entries && $Entries?.data?.entries?.length > 0}
   <ul>
     {#each $Entries.data.entries as entry}
       <li>
